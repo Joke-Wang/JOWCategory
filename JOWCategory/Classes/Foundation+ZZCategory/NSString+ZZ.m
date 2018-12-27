@@ -171,7 +171,7 @@
 
 - (NSString *)zz_amountWithScale:(NSUInteger)scale {
     
-    return [[self zz_decimalNumber] zz_displayAmountWithScale:scale];
+    return [[self zz_decimalNumber] zz_displayAmountWithScale:8 effectiveScale:2];
 }
 
 - (NSString *)zz_amountString {

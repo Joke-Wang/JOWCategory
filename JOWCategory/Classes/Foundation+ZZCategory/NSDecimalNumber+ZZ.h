@@ -8,15 +8,18 @@
 
 #import <Foundation/Foundation.h>
 
+#define K_ZZ_DecimalSeparator @"."
+
 @interface NSDecimalNumber (ZZ)
 
 @end
 
 @interface NSDecimalNumber (Calculate)
 
-- (NSDecimalNumber *)zz_formatWithScale:(NSUInteger)scale;
-- (NSString *)zz_displayAmountWithScale:(NSUInteger)scale;
-
+- (NSDecimalNumber *)zz_formatWithScale:(NSUInteger)decimalDigits;
+- (NSString *)zz_displayAmountWithScale:(NSUInteger)decimalDigits;
+- (NSString *)zz_displayAmountWithScale:(NSUInteger)maximumDecimalDigits
+                      effectiveScale:(NSUInteger)minimumDecimalDigits;
 @end
 
 

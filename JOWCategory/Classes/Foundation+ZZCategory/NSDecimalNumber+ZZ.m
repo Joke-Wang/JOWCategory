@@ -14,33 +14,33 @@
 @end
 
 @implementation NSDecimalNumber (Calculate)
-- (NSDecimalNumber *)zz_formatWithScale:(NSUInteger)scale {
-    NSDecimalNumberHandler *handle = [NSDecimalNumberHandler decimalNumberHandlerWithRoundingMode:NSRoundBankers scale:scale raiseOnExactness:YES raiseOnOverflow:NO raiseOnUnderflow:NO raiseOnDivideByZero:YES];
+- (NSDecimalNumber *)zz_formatWithScale:(NSUInteger)decimalDigits {
+    NSDecimalNumberHandler *handle = [NSDecimalNumberHandler decimalNumberHandlerWithRoundingMode:NSRoundBankers scale:decimalDigits raiseOnExactness:YES raiseOnOverflow:NO raiseOnUnderflow:NO raiseOnDivideByZero:YES];
     return [self decimalNumberByRoundingAccordingToBehavior:handle];
     
     
 }
 
-- (NSString *)zz_displayAmountWithScale:(NSUInteger)scale {
-    NSString *display = [[self zz_formatWithScale:scale] stringValue];
-    
-    NSString *format = @"#####0.";
-    for (int i = 0; i < scale; i ++) {
-        format = [format stringByAppendingString:@"0"];
-    }
+- (NSString *)zz_displayAmountWithScale:(NSUInteger)decimalDigits {
+    return [self zz_displayAmountWithScale:decimalDigits effectiveScale:decimalDigits];
+}
+
+- (NSString *)zz_displayAmountWithScale:(NSUInteger)maximumDecimalDigits
+                         effectiveScale:(NSUInteger)minimumDecimalDigits
+{
+    NSString *display = [[self zz_formatWithScale:maximumDecimalDigits] stringValue];
     
     NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
     // 设置格式
-    [numberFormatter setPositiveFormat:format];
+    //    numberFormatter.locale = [NSLocale localeWithLocaleIdentifier:@"en_CN"];
+    numberFormatter.decimalSeparator = K_ZZ_DecimalSeparator;
+    
+    numberFormatter.maximumFractionDigits = maximumDecimalDigits;  // 最大小数位数
+    numberFormatter.minimumFractionDigits = minimumDecimalDigits;  // 最小小数位数
+    
     display = [numberFormatter stringFromNumber:[NSNumber numberWithDouble:[display doubleValue]]];
     
-    NSUInteger afterStrLength = [display componentsSeparatedByString:@"."].lastObject.length;
-    afterStrLength = ((afterStrLength > 2) ? (afterStrLength - 2) : afterStrLength);
-    
-    NSString *beforeStr = [display substringToIndex:(display.length - afterStrLength)];
-    NSString *afterStr = [display substringFromIndex:(display.length - afterStrLength)];
-    
-    return [beforeStr stringByAppendingString:[afterStr zz_removeInvalidSuffix]];
+    return display;
 }
 
 @end
