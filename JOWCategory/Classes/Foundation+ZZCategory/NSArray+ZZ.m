@@ -24,7 +24,7 @@
 }
 
 /** 数组 转换 jsonString */
-- (NSString *)jsonString {
+- (NSString *)zz_jsonString {
     NSString *str = nil;
     
     @try {
@@ -67,6 +67,22 @@
    return [self sortedArrayUsingDescriptors:[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:key ascending:ascend]]];
 }
 
+/**
+ 生成无需数组
+ 
+ @return 排序后数组
+ */
+- (NSArray *)zz_sortWithUnordered {
+    NSArray *result = [self sortedArrayUsingComparator:^NSComparisonResult(NSString *str1, NSString *str2) {
+        int seed = arc4random_uniform(2);
+        if (seed) {
+            return [str1 compare:str2];
+        } else {
+            return [str2 compare:str1];
+        }
+    }];
+    return result;
+}
 
 /** 数组比较 */
 - (BOOL)zz_compareIgnoreObjectOrderWithArray:(NSArray *)array {
@@ -112,4 +128,27 @@
 
 @end
 
+@implementation NSArray (JsonData)
+/**
+ * json 转换数组
+ */
++ (NSArray *)zz_arrayWithJsonString:(NSString *)jsonString
+{
+    if (jsonString == nil) {
+        return nil;
+    }
+    
+    NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *err;
+    NSArray *array = [NSJSONSerialization JSONObjectWithData:jsonData
+                                                     options:NSJSONReadingMutableContainers
+                                                       error:&err];
+    if(err)
+    {
+        NSLog(@"json解析失败：%@", err);
+        return nil;
+    }
+    return array;
+}
 
+@end

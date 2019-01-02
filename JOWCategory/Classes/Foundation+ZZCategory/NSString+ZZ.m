@@ -125,6 +125,32 @@
 @end
 
 
+@implementation NSString (JsonClass)
+
+- (id)jsonData {
+    
+    if (self == nil) {
+        return nil;
+    }
+    
+    NSData *jsonMetadata = [self dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *err;
+    id jsData = [NSJSONSerialization JSONObjectWithData:jsonMetadata
+                                                options:NSJSONReadingMutableContainers
+                                                  error:&err];
+    
+    if(err)
+    {
+        NSLog(@"json解析失败：%@", err);
+        return self;
+    }
+    
+    return jsData;
+}
+
+@end
+
+
 @implementation NSString (Encryption)
 - (NSString*)zz_SHA1 {
     const char *cstr = [self cStringUsingEncoding:NSUTF8StringEncoding];
@@ -155,7 +181,7 @@
 
 @implementation NSString (DecimalNumber)
 - (NSDecimalNumber *)zz_decimalNumber {
-    return [NSDecimalNumber decimalNumberWithString:DEFUSE_EMPTY_STRING(self)];
+    return [NSDecimalNumber decimalNumberWithString:ZZ_DEFUSE_EMPTY_STRING(self)];
 }
 
 - (NSString *)zz_removeInvalidSuffix {
@@ -175,8 +201,7 @@
 }
 
 - (NSString *)zz_amountString {
-    NSString *str = [self zz_amountWithScale:8];
-    return ((str.length > 13) ? [str substringToIndex:12] : str);
+    return [self zz_amountWithScale:8];
 }
 
 @end
@@ -378,10 +403,10 @@
     float durationTime = time;
     
     //旧值
-    CGFloat old = [DEFUSE_EMPTY_STRING(from) doubleValue];
+    CGFloat old = [ZZ_DEFUSE_EMPTY_STRING(from) doubleValue];
     
     //新值
-    CGFloat new = [DEFUSE_EMPTY_STRING(to) doubleValue];
+    CGFloat new = [ZZ_DEFUSE_EMPTY_STRING(to) doubleValue];
     
     //新旧值 差
     CGFloat poor = new - old;
@@ -534,5 +559,29 @@
 }
 @end
 
+
+@implementation NSString (Attributes)
+
++(NSMutableAttributedString *)zz_amountAttributedString:(NSString *)str
+                                             preSize:(CGFloat)preSize
+                                             sufSize:(CGFloat)sufSize{
+    if (str == nil || [str isKindOfClass:[NSString class]] == NO || str.length == 0) {return nil;}
+    
+    NSRange range = [str rangeOfString:@"."];
+    NSMutableAttributedString *attString = [[NSMutableAttributedString alloc] initWithString:str];
+    if (range.location == NSNotFound) {
+        return attString;
+    }else{
+        NSRange preRange = NSMakeRange(0, range.location + range.length);
+        NSRange sufRange = NSMakeRange(range.location + range.length, str.length - range.location - range.length);
+        [attString addAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:preSize]}
+                           range:preRange];
+        [attString addAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:preSize]}
+                           range:sufRange];
+        return attString;
+    }
+}
+
+@end
 
 

@@ -19,6 +19,11 @@ typedef void(^ChangeBlock)(NSString *num);
 
 @end
 
+@interface NSString (JsonClass)
+
+- (id)jsonData;
+
+@end
 
 @interface NSString (Encryption)
 - (NSString *)zz_MD5;
@@ -66,7 +71,7 @@ typedef void(^ChangeBlock)(NSString *num);
 - (BOOL)zz_decimalMaxLength:(NSUInteger)length;
 
 /**
- * 检查出入的字符串
+ * 检查输入的字符串
  *
  * 首位输入小数点，补全小数点前的0
  * 保留小数点后8位有效数字
@@ -137,6 +142,17 @@ typedef void(^ChangeBlock)(NSString *num);
 
 @end
 
+/**
+ * 根据点左右大小不一样
+ *
+ */
+@interface NSString (Attributes)
 
++(NSMutableAttributedString *)zz_amountAttributedString:(NSString *)str
+                                             preSize:(CGFloat)preSize
+                                             sufSize:(CGFloat)sufSize;
+ 
+
+@end
 
 

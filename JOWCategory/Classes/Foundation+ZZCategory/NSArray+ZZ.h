@@ -20,7 +20,7 @@
 @property (nonatomic, assign, readonly) NSUInteger itemCount;
 
 /** 数组 转换 jsonString */
-@property (nonatomic,   copy, readonly) NSString *jsonString;
+@property (nonatomic,   copy, readonly) NSString *zz_jsonString;
 
 /** 合并成用，逗号隔开的字符串 */
 @property (nonatomic,   copy, readonly) NSString *convertString;
@@ -40,6 +40,13 @@
  */
 - (NSArray *)zz_sortByKey:(NSString *)key ascend:(BOOL)ascend;
 
+/**
+ 生成无需数组
+ 
+ @return 排序后数组
+ */
+- (NSArray *)zz_sortWithUnordered;
+
 /** 数组比较 */
 - (BOOL)zz_compareIgnoreObjectOrderWithArray:(NSArray *)array;
 
@@ -49,10 +56,15 @@
 /** 数据计算差集 */
 - (NSArray *)zz_arrayForMinusWithOtherArray:(NSArray *)otherArray;
 
-
-
-
-
 @end
 
+
+@interface NSArray (JsonData)
+
+/**
+ * json 转换数组
+ */
++ (NSArray *)zz_arrayWithJsonString:(NSString *)jsonString;
+
+@end
 
