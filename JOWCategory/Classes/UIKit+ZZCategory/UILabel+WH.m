@@ -156,7 +156,7 @@
     //计算保留小数点后位数
     NSUInteger scale = 0;
     
-    BOOL isNumber = [to zz_validateStringWithFormat:@"0123456789."];
+    BOOL isNumber = [self zz_validateStringWithFormat:@"0123456789." toString:to];
     BOOL partCount = [to componentsSeparatedByString:@"."].count == 2;
     
     if ((isNumber && partCount)) {
@@ -198,6 +198,22 @@
     
     dispatch_resume(_timer);
     
+}
+
+- (BOOL)zz_validateStringWithFormat:(NSString *)format toString:(NSString *)string {
+    BOOL res = YES;
+    NSCharacterSet* tmpSet = [NSCharacterSet characterSetWithCharactersInString:format];
+    int i = 0;
+    while (i < string.length) {
+        NSString * string = [string substringWithRange:NSMakeRange(i, 1)];
+        NSRange range = [string rangeOfCharacterFromSet:tmpSet];
+        if (range.length == 0) {
+            res = NO;
+            break;
+        }
+        i++;
+    }
+    return res;
 }
 
 @end
