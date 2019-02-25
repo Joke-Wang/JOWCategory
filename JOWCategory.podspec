@@ -42,7 +42,7 @@ Pod::Spec.new do |s|
   
   
   s.subspec 'JOWFoundation' do |ss|
-      ss.source_files = 'JOWCategory/Classes/Foundation+ZZCategory/*.{h,m}'
+      ss.source_files = 'JOWCategory/Classes/Foundation+ZZCategory/*.{h,m},JOWCategory/Classes/Foundation+ZZCategory/NSString+ZZ.{h,m}'
   end
   
   s.subspec 'JOWUIKit' do |ss|
