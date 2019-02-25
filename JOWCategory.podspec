@@ -36,7 +36,21 @@ Pod::Spec.new do |s|
   #   'JOWCategory' => ['JOWCategory/Assets/*.png']
   # }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
+   s.public_header_files = 'Pod/Classes/*.h'
    s.frameworks = 'UIKit', 'Foundation'
   # s.dependency 'AFNetworking', '~> 2.3'
+  
+  
+  s.subspec 'JOWFoundation' do |ss|
+      ss.source_files = 'JOWCategory/Classes/Foundation+ZZCategory/*.{h/m}'
+  end
+  
+  s.subspec 'JOWUIKit' do |ss|
+      ss.source_files = 'JOWCategory/Classes/UIKit+ZZCategory/*.{h/m}'
+  end
+  
+  s.subspec 'JOWQRCode' do |ss|
+      ss.source_files = 'JOWCategory/Classes/**/UIImage+QRCode.{h,m}'
+  end
+  
 end

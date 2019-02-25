@@ -19,8 +19,23 @@
     "ios": "8.0"
   },
   "source_files": "JOWCategory/Classes/**/*",
+  "public_header_files": "Pod/Classes/*.h",
   "frameworks": [
     "UIKit",
     "Foundation"
+  ],
+  "subspecs": [
+    {
+      "name": "JOWFoundation",
+      "source_files": "JOWCategory/Classes/Foundation+ZZCategory/*.{h/m}"
+    },
+    {
+      "name": "JOWUIKit",
+      "source_files": "JOWCategory/Classes/UIKit+ZZCategory/*.{h/m}"
+    },
+    {
+      "name": "JOWQRCode",
+      "source_files": "JOWCategory/Classes/**/UIImage+QRCode.{h,m}"
+    }
   ]
 }
