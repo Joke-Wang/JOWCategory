@@ -122,11 +122,6 @@
         return;
     }
     
-    //    if (!DEFUSE_EMPTY_STRING(from) || !DEFUSE_EMPTY_STRING(to) || !from || !to) {
-    //        !change ? : change(@"0.00");
-    //        return;
-    //    }
-    
     if ([from isEqualToString:to]) {
         !change ? : change(to);
         return;
@@ -214,6 +209,7 @@
     }
     return res;
 }
+
 
 @end
 
