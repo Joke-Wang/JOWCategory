@@ -6,6 +6,7 @@
 //  Copyright © 2016年 joke. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
 #import "UILabel+WH.h"
 
 #define IS_NULL(x)          (!x || [x isKindOfClass:[NSNull class]])

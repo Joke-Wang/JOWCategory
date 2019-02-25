@@ -8,6 +8,7 @@
 
 #import "NSString+ZZ.h"
 
+#import <UIKit/UIKit.h>
 #include <net/if.h>
 #include <sys/types.h>
 #include <sys/sysctl.h>
