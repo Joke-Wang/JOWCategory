@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'JOWCategory'
-  s.version          = '0.1.1'
+  s.version          = '0.1.2'
   s.summary          = 'Summary of functions used in development.'
 
 # This description is used to generate tags and improve search results.
@@ -41,9 +41,9 @@ Pod::Spec.new do |s|
   # s.dependency 'AFNetworking', '~> 2.3'
   
   
-  # s.subspec 'JOWFoundation' do |ss|
-  #     ss.source_files = 'JOWCategory/Classes/Foundation+ZZCategory/*.{h,m}'
-  # end
+  s.subspec 'JOWFoundation' do |ss|
+      ss.source_files = 'JOWCategory/Classes/Foundation+ZZCategory/*.{h,m}'
+  end
   
   # s.subspec 'JOWUIKit' do |ss|
   #     ss.source_files = 'JOWCategory/Classes/UIKit+ZZCategory/*.{h,m}'
