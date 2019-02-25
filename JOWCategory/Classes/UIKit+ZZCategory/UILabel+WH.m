@@ -110,7 +110,6 @@
     }];
 }
 
-
 - (void)zz_setNumberFrom:(NSString *)from to:(NSString *)to durationTime:(float)time change:(void (^) (NSString *num))change {
     
     if (!to && from) {
@@ -205,8 +204,8 @@
     NSCharacterSet* tmpSet = [NSCharacterSet characterSetWithCharactersInString:format];
     int i = 0;
     while (i < string.length) {
-        NSString * string = [string substringWithRange:NSMakeRange(i, 1)];
-        NSRange range = [string rangeOfCharacterFromSet:tmpSet];
+        NSString * temp = [string substringWithRange:NSMakeRange(i, 1)];
+        NSRange range = [temp rangeOfCharacterFromSet:tmpSet];
         if (range.length == 0) {
             res = NO;
             break;
