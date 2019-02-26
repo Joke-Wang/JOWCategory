@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'JOWCategory/Classes/**/*'
+  s.source_files = 'JOWCategory/Classes/JOWCategory.h'
   s.public_header_files = 'JOWCategory/Classes/JOWCategory.h'
   
   # s.resource_bundles = {
