@@ -28,18 +28,13 @@ Pod::Spec.new do |s|
   
   s.subspec 'JOWFoundation' do |ss|
       ss.source_files = 'JOWCategory/Classes/JOWFoundation/*.{h,m}'
-      ss.public_header_files = 'JOWCategory/Classes/JOWFoundation/JOWFoundation.h'
-  end
-  
-  s.subspec 'JOWStringCategory' do |ss|
-      ss.source_files = 'JOWCategory/Classes/JOWFoundation/NSString+ZZ.{h,m}'
-      ss.public_header_files = 'JOWCategory/Classes/JOWFoundation/NSString+ZZ.h'
+      ss.public_header_files = 'JOWCategory/Classes/JOWFoundation/*.h'
   end
   
   s.subspec 'JOWUIKit' do |ss|
       ss.source_files = 'JOWCategory/Classes/JOWUIKit/*.{h,m}'
       ss.public_header_files = 'JOWCategory/Classes/JOWUIKit/*.h'
-      ss.dependency 'JOWCategory/JOWStringCategory'
+      ss.dependency 'JOWCategory/JOWFoundation'
   end
   
   s.subspec 'JOWQRCode' do |ss|
