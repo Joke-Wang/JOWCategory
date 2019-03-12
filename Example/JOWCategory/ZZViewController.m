@@ -7,6 +7,7 @@
 //
 
 #import "ZZViewController.h"
+#import <JOWCategory/JOWCategory.h>
 
 @interface ZZViewController ()
 
@@ -18,6 +19,23 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    
+}
+- (IBAction)accessAddressBook:(id)sender {
+    [ZZCheckPermission checkPermissionWithAddressBook];
+}
+
+- (IBAction)accessCamera:(id)sender {
+    [ZZCheckPermission checkPermissionWithMediaType:AVMediaTypeVideo];
+}
+
+- (IBAction)accessMicrophone:(id)sender {
+    [ZZCheckPermission checkPermissionWithMediaType:AVMediaTypeAudio];
+}
+
+- (IBAction)accessPhotoAlbum:(id)sender {
+    [ZZCheckPermission checkPermissionWithPhotoLibrary];
 }
 
 - (void)didReceiveMemoryWarning

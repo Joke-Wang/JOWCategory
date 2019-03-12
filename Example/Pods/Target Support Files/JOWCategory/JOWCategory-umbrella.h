@@ -11,7 +11,7 @@
 #endif
 
 #import "JOWCategory.h"
-#import "JOWFoundation.h"
+#import "ZZCheckPermission.h"
 #import "NSArray+ZZ.h"
 #import "NSDate+ZZ.h"
 #import "NSDecimalNumber+ZZ.h"
@@ -19,14 +19,13 @@
 #import "NSString+ZZ.h"
 #import "ZZFoundationHeader.h"
 #import "UIImage+QRCode.h"
-#import "JOWUIKit.h"
 #import "UIButton+Countdown.h"
 #import "UIButtonTextImage.h"
 #import "UIColor+Gradient.h"
+#import "UIImage+ScreenShots.h"
 #import "UILabel+WH.h"
 #import "UIView+Frame.h"
 #import "UIView+Gradient.h"
-#import "UIImage+QRCode.h"
 
 FOUNDATION_EXPORT double JOWCategoryVersionNumber;
 FOUNDATION_EXPORT const unsigned char JOWCategoryVersionString[];

@@ -56,6 +56,10 @@
 /** 数据计算差集 */
 - (NSArray *)zz_arrayForMinusWithOtherArray:(NSArray *)otherArray;
 
+/** 是否包含某元素 */
+- (BOOL)zz_arrayContainsItem:(NSObject *)item;
+
+
 @end
 
 

@@ -15,6 +15,7 @@
 #import "NSString+ZZ.h"
 #import "ZZFoundationHeader.h"
 #import "UIImage+QRCode.h"
+#import "UIImage+ScreenShots.h"
 #import "UIButton+Countdown.h"
 #import "UIButtonTextImage.h"
 #import "UIColor+Gradient.h"
@@ -22,5 +23,6 @@
 #import "UIView+Frame.h"
 #import "UIView+Gradient.h"
 
+#import "ZZCheckPermission.h" //权限检查
 
 #endif /* JOWCategory_h */

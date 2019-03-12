@@ -125,6 +125,16 @@
     return minusArray;
 }
 
+/** 是否包含某元素 */
+- (BOOL)zz_arrayContainsItem:(NSObject *)item {
+    if (self.count == 0 || item == nil) {
+        return false;
+    }
+    
+    NSArray *arr = [self zz_arrayForIntersectionWithOtherArray:@[item]];
+    return arr.count != 0;
+}
+
 
 @end
 

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'JOWCategory'
-  s.version          = '0.1.3'
+  s.version          = '0.1.4'
   s.summary          = 'Summary of functions used in development.'
   s.description      = <<-DESC
   JOWCategory is my Summary of functions used in development.
@@ -40,6 +40,11 @@ Pod::Spec.new do |s|
   s.subspec 'JOWQRCode' do |ss|
       ss.source_files = 'JOWCategory/Classes/JOWQRCode/UIImage+QRCode.{h,m}'
       ss.public_header_files = 'JOWCategory/Classes/JOWQRCode/UIImage+QRCode.h'
+  end
+  
+  s.subspec 'JOWCheckPermission' do |ss|
+      ss.source_files = 'JOWCategory/Classes/JOWCheckPermission/*.{h,m}'
+      ss.public_header_files = 'JOWCategory/Classes/JOWCheckPermission/*.h'
   end
   
 end
