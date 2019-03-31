@@ -37,72 +37,67 @@ NSUInteger DeviceSystemMajorVersion(void);
 #endif
 
 
-typedef enum : NSUInteger {
-    NotDetermined,      //未进行授权（需要调用授权）
-    RestrictedOrDenied, //被限制或拒绝授权（进设置中修改）
-    Authorized,         //已授权
-} PermissionStatus;     //授权状态
+typedef NS_ENUM(NSUInteger, PermissionStatus) {
+    NotDetermined       =   0,  //未进行授权（需要调用授权）
+    RestrictedOrDenied  =   1,  //被限制或拒绝授权（进设置中修改）
+    Authorized          =   2,  //已授权
+};
+
+#define kCheckPermission        [ZZCheckPermission sharePermission]
+
+#define kPhotoLibraryPermission [ZZCheckPermission checkPermissionWithPhotoLibrary]
+#define kCameraPermission       [ZZCheckPermission checkPermissionWithMediaType:AVMediaTypeVideo]
+#define kMicrophonePermission   [ZZCheckPermission checkPermissionWithMediaType:AVMediaTypeAudio]
+#define kContactsPermission     [ZZCheckPermission checkPermissionWithAddressBook]
+
 
 /**
  * 获取权限状态
  */
 @interface ZZCheckPermission : NSObject
 
-/**
- * 相册读取和写入权限状态
- */
-@property (nonatomic, assign, readonly) PermissionStatus photoLibraryPermissionStatus;
-/**
- * 相机（摄像头）权限状态
- */
-@property (nonatomic, assign, readonly) PermissionStatus cameraPermissionStatus;
-/**
- * 麦克风（话筒）权限状态
- */
-@property (nonatomic, assign, readonly) PermissionStatus audioPermissionStatus;
-/**
- * 通讯录读取和写入权限状态
- */
-@property (nonatomic, assign, readonly) PermissionStatus addressBookPermissionStatus;
-
 #pragma mark - 初始化
 + (instancetype)sharePermission;
 
 #pragma mark - 照片库（相册）权限获取
 /**
- *相册读取和写入权限
- 
- *未授权，自动调用授权；授权关闭，提示并跳转到设置页面
- @return 已授权（true）；未授权/拒绝授权/被限制（false）
+ * 相册读取和写入权限
+ *
+ * 未授权，自动调用授权；授权关闭，提示并跳转到设置页面
+ * @return 已授权（true）；未授权/拒绝授权/被限制（false）
  */
 + (BOOL)checkPermissionWithPhotoLibrary;
 
 /**
- *相册读取和写入权限
-
- @param operation 授权状态
- @return 已授权（true）；未授权/拒绝授权/被限制（false）
+ * 相册读取和写入权限
+ *
+ * @param automaticRequest 是否自动申请权限
+ * @param operation 授权状态
+ * @return 已授权（true）；未授权/拒绝授权/被限制（false）
  */
-+ (BOOL)checkPermissionWithPhotoLibraryOfOperation:(void(^)(PermissionStatus status))operation;
+- (BOOL)checkPermissionWithPhotoLibraryOfAutomaticRequest:(BOOL)automaticRequest
+                                                operation:(void(^)(PermissionStatus status))operation;
 
 #pragma mark - 相机（摄像头）/麦克风（话筒）权限获取
 /**
- *相机（摄像头）/麦克风（话筒）读取和写入权限
- 
- *未授权，自动调用授权；授权关闭，提示并跳转到设置页面
- @param media AVMediaTypeVideo（相机） or AVMediaTypeAudio（麦克风）
- @return 已授权（true）；未授权/拒绝授权/被限制（false）
+ * 相机（摄像头）/麦克风（话筒）读取和写入权限
+ *
+ * 未授权，自动调用授权；授权关闭，提示并跳转到设置页面
+ * @param media AVMediaTypeVideo（相机） or AVMediaTypeAudio（麦克风）
+ * @return 已授权（true）；未授权/拒绝授权/被限制（false）
  */
 + (BOOL)checkPermissionWithMediaType:(AVMediaType)media;
 
 /**
- *相机（摄像头）/麦克风（话筒）读取和写入权限
- 
- @param operation 授权状态
- @param media AVMediaTypeVideo（相机） or AVMediaTypeAudio（麦克风）
- @return 已授权（true）；未授权/拒绝授权/被限制（false）
+ * 相机（摄像头）/麦克风（话筒）读取和写入权限
+ *
+ * @param operation 授权状态
+ * @param media AVMediaTypeVideo（相机） or AVMediaTypeAudio（麦克风）
+ * @param automaticRequest 是否自动申请权限
+ * @return 已授权（true）；未授权/拒绝授权/被限制（false）
  */
-+ (BOOL)checkPermissionWithMediaType:(AVMediaType)media
+- (BOOL)checkPermissionWithMediaType:(AVMediaType)media
+                    automaticRequest:(BOOL)automaticRequest
                            operation:(void(^)(PermissionStatus status))operation;
 
 
@@ -118,10 +113,12 @@ typedef enum : NSUInteger {
 /**
  * 通讯录读取和写入权限
  *
+ * @param automaticRequest 是否自动申请权限
  * @param operation 授权状态
  * @return 已授权（true）；未授权/拒绝授权/被限制（false）
  */
-+ (BOOL)checkPermissionWithAddressBookOfOperation:(void(^)(PermissionStatus status))operation;
+- (BOOL)checkPermissionWithAddressBookOfAutomaticRequest:(BOOL)automaticRequest
+                                               operation:(void(^)(PermissionStatus status))operation;
 
 
 
