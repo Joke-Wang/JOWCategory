@@ -9,15 +9,15 @@ PODS:
   - FBSnapshotTestCase/Core (2.1.4)
   - FBSnapshotTestCase/SwiftSupport (2.1.4):
     - FBSnapshotTestCase/Core
-  - JOWCategory (0.1.4):
-    - JOWCategory/JOWCheckPermission (= 0.1.4)
-    - JOWCategory/JOWFoundation (= 0.1.4)
-    - JOWCategory/JOWQRCode (= 0.1.4)
-    - JOWCategory/JOWUIKit (= 0.1.4)
-  - JOWCategory/JOWCheckPermission (0.1.4)
-  - JOWCategory/JOWFoundation (0.1.4)
-  - JOWCategory/JOWQRCode (0.1.4)
-  - JOWCategory/JOWUIKit (0.1.4):
+  - JOWCategory (0.1.6):
+    - JOWCategory/JOWCheckPermission (= 0.1.6)
+    - JOWCategory/JOWFoundation (= 0.1.6)
+    - JOWCategory/JOWQRCode (= 0.1.6)
+    - JOWCategory/JOWUIKit (= 0.1.6)
+  - JOWCategory/JOWCheckPermission (0.1.6)
+  - JOWCategory/JOWFoundation (0.1.6)
+  - JOWCategory/JOWQRCode (0.1.6)
+  - JOWCategory/JOWUIKit (0.1.6):
     - JOWCategory/JOWFoundation
   - Specta (1.0.7)
 
@@ -43,7 +43,7 @@ SPEC CHECKSUMS:
   Expecta: 3b6bd90a64b9a1dcb0b70aa0e10a7f8f631667d5
   "Expecta+Snapshots": dcff217eef506dabd6dfdc7864ea2da321fafbb8
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
-  JOWCategory: 9ce69ad84f4a7374a1692ea3a9e4421019aaf5df
+  JOWCategory: 756fb096a7b957394cf0ea8c9741bc040ab321f0
   Specta: 3e1bd89c3517421982dc4d1c992503e48bd5fe66
 
 PODFILE CHECKSUM: a35a5c2599492642d48e59b6a0cf6fcfd86214ad
