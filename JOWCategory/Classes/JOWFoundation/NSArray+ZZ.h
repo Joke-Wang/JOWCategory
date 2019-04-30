@@ -72,3 +72,12 @@
 
 @end
 
+@interface NSMutableArray (Safe)
+
+- (void)zz_addObject:(id)anObject;
+
+- (void)zz_addObjectsFromArray:(NSArray *)otherArray;
+
+- (void)zz_insertObject:(id)anObject atIndex:(NSUInteger)index;
+
+@end

@@ -10,7 +10,7 @@
 
 @implementation NSObject (ZZDictionary)
 /** 是否是字典对象 */
-- (BOOL)isDictionaryClass {
+- (BOOL)zz_isDictionaryClass {
     return [self isKindOfClass:[NSDictionary class]];
 }
 
@@ -20,7 +20,7 @@
 /**
  * 字典 转换 jsonString
  */
-- (NSString *)jsonString {
+- (NSString *)zz_jsonString {
     NSError *error = nil;
     NSData *jsonData = nil;
     
@@ -44,5 +44,35 @@
     return jsonString;
 }
 
+- (id)zz_objectForKey:(id)key {
+    if (key != nil) {
+        id value = [self objectForKey:key];
+        return value;
+    }
+    return nil;
+}
+
+@end
+
+
+@implementation NSMutableDictionary (Safe)
+
+- (void)zz_setObject:(id)anObject forKey:(id<NSCopying>)aKey {
+    if (anObject != nil && aKey != nil) {
+        [self setObject:anObject forKey:aKey];
+    }
+}
+
+- (void)zz_removeObjectForKey:(id)aKey {
+    if (aKey != nil) {
+        [self removeObjectForKey:aKey];
+    }
+}
+
+- (void)zz_addEntriesFromDictionary:(NSDictionary *)otherDictionary {
+    if (otherDictionary != nil && [otherDictionary isKindOfClass:[NSDictionary class]]) {
+        [self addEntriesFromDictionary:otherDictionary];
+    }
+}
 
 @end

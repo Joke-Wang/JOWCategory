@@ -162,3 +162,36 @@
 }
 
 @end
+
+
+@implementation NSMutableArray (Safe)
+
+- (void)zz_addObject:(id)anObject {
+    if (anObject != nil) {
+        [self addObject:anObject];
+    }
+}
+
+- (void)zz_addObjectsFromArray:(NSArray *)otherArray {
+    if (otherArray != nil && [otherArray isKindOfClass:[NSArray class]]) {
+        [self addObjectsFromArray:otherArray];
+    }
+}
+
+- (void)zz_insertObject:(id)anObject atIndex:(NSUInteger)index {
+    if (anObject != nil) {
+        if (index < self.count) {
+            [self insertObject:anObject atIndex:index];
+        }else{
+            [self addObject:anObject];
+        }
+    }
+}
+
+
+
+@end
+
+
+
+

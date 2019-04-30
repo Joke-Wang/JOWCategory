@@ -10,7 +10,7 @@
 
 @interface NSObject(ZZDictionary)
 /** 是否是字典对象 */
-@property (nonatomic, assign, readonly) BOOL isDictionaryClass;
+@property (nonatomic, assign, readonly) BOOL zz_isDictionaryClass;
 
 @end
 
@@ -19,7 +19,18 @@
 /**
  * 字典 转换 jsonString
  */
-@property (nonatomic, copy, readonly) NSString *jsonString;
+@property (nonatomic, copy, readonly) NSString *zz_jsonString;
 
+- (id)zz_objectForKey:(id)key;
+
+@end
+
+@interface NSMutableDictionary (Safe)
+
+- (void)zz_setObject:(id)anObject forKey:(id<NSCopying>)aKey;
+
+- (void)zz_removeObjectForKey:(id)aKey;
+
+- (void)zz_addEntriesFromDictionary:(NSDictionary *)otherDictionary;
 
 @end
