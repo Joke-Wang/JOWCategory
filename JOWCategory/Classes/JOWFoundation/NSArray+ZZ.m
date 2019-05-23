@@ -25,18 +25,51 @@
 
 /** 数组 转换 jsonString */
 - (NSString *)zz_jsonString {
-    NSString *str = nil;
+//    NSString *str = nil;
+//    
+//    @try {
+//        str = [[NSString alloc]initWithData:[NSJSONSerialization dataWithJSONObject:self options:0 error:NULL] encoding:NSUTF8StringEncoding];
+//    } @catch (NSException *exception) {
+//        
+//    } @finally {
+//        
+//    }
+//    
+//    return str;
     
-    @try {
-        str = [[NSString alloc]initWithData:[NSJSONSerialization dataWithJSONObject:self options:0 error:NULL] encoding:NSUTF8StringEncoding];
-    } @catch (NSException *exception) {
+        NSError *error = nil;
+        NSData *jsonData = nil;
         
-    } @finally {
+        @try {
+            jsonData = [NSJSONSerialization dataWithJSONObject:self
+                                                       options:NSJSONWritingPrettyPrinted
+                                                         error:&error];
+        } @catch (NSException *exception) {
+            
+        } @finally {
+            
+        }
         
+        if (jsonData == nil) {
+#ifdef DEBUG
+            NSLog(@"fail to get JSON from array: %@, error: %@", self, error);
+#endif
+            return nil;
+        }
+        NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+        
+        NSMutableString *mutStr = [NSMutableString stringWithString:jsonString];
+        
+        //去掉字符串中的空格
+        NSRange range = {0,jsonString.length};
+        [mutStr replaceOccurrencesOfString:@" " withString:@"" options:NSLiteralSearch range:range];
+        
+        //去掉字符串中的换行符
+        NSRange range2 = {0,mutStr.length};
+        [mutStr replaceOccurrencesOfString:@"\n" withString:@"" options:NSLiteralSearch range:range2];
+        
+        return [NSString stringWithString:mutStr];
     }
-    
-    return str;
-}
 
 /** 合并成用，逗号隔开的字符串 */
 - (NSString *)convertString {

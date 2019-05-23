@@ -41,7 +41,18 @@
         return nil;
     }
     NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-    return jsonString;
+    
+    NSMutableString *mutStr = [NSMutableString stringWithString:jsonString];
+    
+    //去掉字符串中的空格
+    NSRange range = {0,jsonString.length};
+    [mutStr replaceOccurrencesOfString:@" " withString:@"" options:NSLiteralSearch range:range];
+    
+    //去掉字符串中的换行符
+    NSRange range2 = {0,mutStr.length};
+    [mutStr replaceOccurrencesOfString:@"\n" withString:@"" options:NSLiteralSearch range:range2];
+    
+    return [NSString stringWithString:mutStr];
 }
 
 - (id)zz_objectForKey:(id)key {
