@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'JOWCategory'
-  s.version          = '0.1.6'
+  s.version          = '0.1.7'
   s.summary          = 'Summary of functions used in development.'
   s.description      = <<-DESC
   JOWCategory is my Summary of functions used in development.
@@ -27,23 +27,23 @@ Pod::Spec.new do |s|
   
   
   s.subspec 'JOWFoundation' do |ss|
-      ss.source_files = 'JOWCategory/Classes/JOWFoundation/*.{h,m}'
+      ss.source_files = 'JOWCategory/Classes/JOWFoundation/*'
       ss.public_header_files = 'JOWCategory/Classes/JOWFoundation/*.h'
   end
   
   s.subspec 'JOWUIKit' do |ss|
-      ss.source_files = 'JOWCategory/Classes/JOWUIKit/*.{h,m}'
+      ss.source_files = 'JOWCategory/Classes/JOWUIKit/*'
       ss.public_header_files = 'JOWCategory/Classes/JOWUIKit/*.h'
       ss.dependency 'JOWCategory/JOWFoundation'
   end
   
   s.subspec 'JOWQRCode' do |ss|
-      ss.source_files = 'JOWCategory/Classes/JOWQRCode/UIImage+QRCode.{h,m}'
+      ss.source_files = 'JOWCategory/Classes/JOWQRCode/UIImage+QRCode'
       ss.public_header_files = 'JOWCategory/Classes/JOWQRCode/UIImage+QRCode.h'
   end
   
   s.subspec 'JOWCheckPermission' do |ss|
-      ss.source_files = 'JOWCategory/Classes/JOWCheckPermission/*.{h,m}'
+      ss.source_files = 'JOWCategory/Classes/JOWCheckPermission/*'
       ss.public_header_files = 'JOWCategory/Classes/JOWCheckPermission/*.h'
   end
   

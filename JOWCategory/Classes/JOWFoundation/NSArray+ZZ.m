@@ -25,17 +25,6 @@
 
 /** 数组 转换 jsonString */
 - (NSString *)zz_jsonString {
-//    NSString *str = nil;
-//    
-//    @try {
-//        str = [[NSString alloc]initWithData:[NSJSONSerialization dataWithJSONObject:self options:0 error:NULL] encoding:NSUTF8StringEncoding];
-//    } @catch (NSException *exception) {
-//        
-//    } @finally {
-//        
-//    }
-//    
-//    return str;
     
         NSError *error = nil;
         NSData *jsonData = nil;
