@@ -45,6 +45,7 @@ Pod::Spec.new do |s|
   s.subspec 'JOWCheckPermission' do |ss|
       ss.source_files = 'JOWCategory/Classes/JOWCheckPermission/*.{h,m}'
       ss.public_header_files = 'JOWCategory/Classes/JOWCheckPermission/*.h'
+      ss.frameworks = 'UIKit', 'Foundation', 'AssetsLibrary', 'AVFoundation', 'Contacts', 'Photos', 'AddressBook'
   end
   
 end

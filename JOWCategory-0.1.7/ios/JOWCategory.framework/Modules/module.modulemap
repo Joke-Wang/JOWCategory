@@ -1,0 +1,6 @@
+framework module JOWCategory {
+  umbrella header "JOWCategory.h"
+
+  export *
+  module * { export * }
+}
