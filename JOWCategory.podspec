@@ -22,7 +22,8 @@ Pod::Spec.new do |s|
   #   'JOWCategory' => ['JOWCategory/Assets/*.png']
   # }
 
-  s.frameworks = 'UIKit', 'Foundation'
+  #s.frameworks = 'UIKit', 'Foundation'
+  s.frameworks = 'UIKit', 'Foundation', 'AssetsLibrary', 'AVFoundation', 'Contacts', 'Photos', 'AddressBook'
   # s.dependency 'AFNetworking', '~> 2.3'
   
   
