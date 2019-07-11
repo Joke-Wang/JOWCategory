@@ -27,23 +27,23 @@ Pod::Spec.new do |s|
   
   
   s.subspec 'JOWFoundation' do |ss|
-      ss.source_files = 'JOWCategory/Classes/JOWFoundation/*'
+      ss.source_files = 'JOWCategory/Classes/JOWFoundation/*.{h,m}'
       ss.public_header_files = 'JOWCategory/Classes/JOWFoundation/*.h'
   end
   
   s.subspec 'JOWUIKit' do |ss|
-      ss.source_files = 'JOWCategory/Classes/JOWUIKit/*'
+      ss.source_files = 'JOWCategory/Classes/JOWUIKit/*.{h,m}'
       ss.public_header_files = 'JOWCategory/Classes/JOWUIKit/*.h'
       ss.dependency 'JOWCategory/JOWFoundation'
   end
   
   s.subspec 'JOWQRCode' do |ss|
-      ss.source_files = 'JOWCategory/Classes/JOWQRCode/UIImage+QRCode'
+      ss.source_files = 'JOWCategory/Classes/JOWQRCode/UIImage+QRCode.{h,m}'
       ss.public_header_files = 'JOWCategory/Classes/JOWQRCode/UIImage+QRCode.h'
   end
   
   s.subspec 'JOWCheckPermission' do |ss|
-      ss.source_files = 'JOWCategory/Classes/JOWCheckPermission/*'
+      ss.source_files = 'JOWCategory/Classes/JOWCheckPermission/*.{h,m}'
       ss.public_header_files = 'JOWCategory/Classes/JOWCheckPermission/*.h'
   end
   
