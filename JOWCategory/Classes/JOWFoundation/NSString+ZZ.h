@@ -13,6 +13,10 @@ typedef void(^ChangeBlock)(NSString *num);
 @interface NSString (DeviceModel)
 + (NSString *)zz_currentDeviceModel;
 
++ (NSString *)zz_systemVersionString;
+
++ (NSString *)zz_screenPix;
+
 @end
 
 @interface NSString (ZZ)

@@ -123,6 +123,18 @@
     return platform;
 }
 
++ (NSString *)zz_systemVersionString {
+    return [NSString stringWithFormat:@"iOS %.2f",[[[UIDevice currentDevice] systemVersion] floatValue]];
+}
+
++ (NSString *)zz_screenPix {
+    
+    CGSize screenSize = [UIScreen mainScreen].currentMode.size;
+    
+    return [NSString stringWithFormat:@"%.0f×%.0f", screenSize.width, screenSize.height];
+
+}
+
 @end
 
 
