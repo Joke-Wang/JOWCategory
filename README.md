@@ -1,6 +1,6 @@
 # JOWCategory
 
-[![CI Status](https://img.shields.io/travis/Joke-Wang/JOWCategory.svg?style=flat)](https://travis-ci.org/Joke-Wang/JOWCategory)&nbsp;
+
 [![Version](https://img.shields.io/cocoapods/v/JOWCategory.svg?style=flat)](https://cocoapods.org/pods/JOWCategory)&nbsp;
 [![License](https://img.shields.io/cocoapods/l/JOWCategory.svg?style=flat)](https://cocoapods.org/pods/JOWCategory)&nbsp;
 [![Platform](https://img.shields.io/cocoapods/p/JOWCategory.svg?style=flat)](https://cocoapods.org/pods/JOWCategory)&nbsp;

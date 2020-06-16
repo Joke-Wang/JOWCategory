@@ -10,13 +10,27 @@
 
 @implementation NSDate (ZZ)
 
+- (NSDate *)gregorianDateToOtherCalendar:(NSCalendar *)calendar {
+    return [self currentCalendar:[[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian]
+                      toCalendar:calendar];
+}
+
+/// 当前日历转为目标日历
+/// @param currentCalendar 当前时间使用的日历
+/// @param toCalendar 将要转化为的日历
+- (NSDate *)currentCalendar:(NSCalendar *)currentCalendar toCalendar:(NSCalendar *)toCalendar {
+    NSCalendarUnit unit = NSCalendarUnitEra | NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond | NSCalendarUnitNanosecond | NSCalendarUnitWeekday | NSCalendarUnitWeekdayOrdinal | NSCalendarUnitQuarter | NSCalendarUnitWeekOfMonth | NSCalendarUnitWeekOfYear | NSCalendarUnitYearForWeekOfYear;
+    NSDateComponents *components = [toCalendar components:unit fromDate:self];
+    
+    return [currentCalendar dateFromComponents:components];
+}
 
 #pragma mark - 判断时间是否为今年
 /**
  判断时间是否为今年
  */
 - (BOOL)isThisYear {
-    NSCalendar *calender = [NSCalendar currentCalendar];
+    NSCalendar *calender = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     NSDateComponents *dateCmps = [calender components:NSCalendarUnitYear fromDate:self];
     NSDateComponents *nowCmps = [calender components:NSCalendarUnitYear fromDate:[NSDate date]];
     return (dateCmps.year == nowCmps.year);
@@ -44,7 +58,7 @@
     NSDate *date = [fmt dateFromString:dateStr];
     now = [fmt dateFromString:nowStr];
     
-    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     NSCalendarUnit unit = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay;
     //cmps = fromDate - toDate
     NSDateComponents *cmps = [calendar components:unit fromDate:date toDate:now options:0];
@@ -96,9 +110,8 @@
  */
 - (NSDateComponents *)components {
     //创建日历
-    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     //定义成分
-//    NSCalendarUnit unit = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond;
     NSCalendarUnit unit = NSCalendarUnitEra | NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond | NSCalendarUnitNanosecond | NSCalendarUnitWeekday | NSCalendarUnitWeekdayOrdinal | NSCalendarUnitQuarter | NSCalendarUnitWeekOfMonth | NSCalendarUnitWeekOfYear | NSCalendarUnitYearForWeekOfYear;
     
     return [calendar components:unit fromDate:self];
@@ -195,13 +208,13 @@
 #pragma mark - 是当年的第几周
 /** 是当年的第几周 */
 - (NSInteger)weeksAtYear {
-    return [[NSCalendar currentCalendar] ordinalityOfUnit:NSCalendarUnitWeekOfYear inUnit:NSCalendarUnitYear forDate:self];
+    return [[[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian] ordinalityOfUnit:NSCalendarUnitWeekOfYear inUnit:NSCalendarUnitYear forDate:self];
 }
 
 #pragma mark - 是当月的第几周
 /** 是当月的第几周 */
 - (NSInteger)weeksAtMonth {
-    return [[NSCalendar currentCalendar] ordinalityOfUnit:NSCalendarUnitWeekOfMonth inUnit:NSCalendarUnitMonth forDate:self];
+    return [[[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian] ordinalityOfUnit:NSCalendarUnitWeekOfMonth inUnit:NSCalendarUnitMonth forDate:self];
 }
 
 #pragma mark - 是否闰年
@@ -267,51 +280,61 @@
  @return 返回的NSDate对象
  */
 + (NSDate *)zz_dateWithYear:(NSUInteger)year
-                   month:(NSInteger)month
-                     day:(NSInteger)day
-                    hour:(NSInteger)hour
-                  minute:(NSInteger)minute
-                  second:(NSInteger)second
+                      month:(NSInteger)month
+                        day:(NSInteger)day
+                       hour:(NSInteger)hour
+                     minute:(NSInteger)minute
+                     second:(NSInteger)second
 {
-    return [NSDate zz_dateWithYear:year
-                          month:month
-                            day:day
-                           hour:hour
-                         minute:minute
-                         second:second
-                       timeZone:[NSTimeZone systemTimeZone]];
+    return [NSDate zz_dateWithCalendar:[[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian]
+                                  year:year
+                                 month:month
+                                   day:day
+                                  hour:hour
+                                minute:minute
+                                second:second
+                              timeZone:[NSTimeZone systemTimeZone]];
 }
 
-/**
- 按照给定时间输出NSDate对象
- 
- @param year 年
- @param month 月
- @param day 日
- @param hour 时
- @param minute 分
- @param second 秒
- @param timeZone 时区
- @return 返回的NSDate对象
- */
-+ (NSDate *)zz_dateWithYear:(NSUInteger)year
-                   month:(NSInteger)month
-                     day:(NSInteger)day
-                    hour:(NSInteger)hour
-                  minute:(NSInteger)minute
-                  second:(NSInteger)second
-                timeZone:(NSTimeZone *)timeZone
+/// 按照给定时间输出NSDate对象
+/// @param calendar 日历（公历、中国农历、佛历等，默认使用公历）
+/// @param year 年
+/// @param month 月
+/// @param day 日
+/// @param hour 时
+/// @param minute 分
+/// @param second 秒
+/// @param timeZone 时区（默认使用systemTimeZone）
++ (NSDate *)zz_dateWithCalendar:(NSCalendar *)calendar
+                           year:(NSUInteger)year
+                          month:(NSInteger)month
+                            day:(NSInteger)day
+                           hour:(NSInteger)hour
+                         minute:(NSInteger)minute
+                         second:(NSInteger)second
+                       timeZone:(NSTimeZone *)timeZone
 {
-    NSDateComponents *dateComponents = [[NSCalendar currentCalendar] components:NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond | NSCalendarUnitTimeZone fromDate:[NSDate date]];
+    NSCalendar *useCalendar = calendar;
+    if (!useCalendar) {
+        useCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    }
+    
+    NSTimeZone *useTimeZone = timeZone;
+    if (!useTimeZone) {
+        useTimeZone = [NSTimeZone systemTimeZone];
+    }
+    
+    NSCalendarUnit unit = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond | NSCalendarUnitTimeZone;
+    NSDateComponents *dateComponents = [useCalendar components:unit fromDate:[NSDate date]];
     dateComponents.year = year;
     dateComponents.month = month;
     dateComponents.day = day;
     dateComponents.hour = hour;
     dateComponents.minute = minute;
     dateComponents.second = second;
-    dateComponents.timeZone = timeZone;
+    dateComponents.timeZone = useTimeZone;
     
-    return [[NSCalendar currentCalendar] dateFromComponents:dateComponents];
+    return [useCalendar dateFromComponents:dateComponents];
 }
 
 #pragma mark - 设置时间格式

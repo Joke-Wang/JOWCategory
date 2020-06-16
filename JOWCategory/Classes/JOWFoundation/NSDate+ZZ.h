@@ -40,6 +40,15 @@ typedef enum : NSUInteger {
 
 @interface NSDate (ZZ)
 
+/// 公历转化为其他历法
+/// @param calendar 需要转化为的历法
+- (NSDate *)gregorianDateToOtherCalendar:(NSCalendar *)calendar;
+
+/// 当前日历转为目标日历
+/// @param currentCalendar 当前时间使用的日历
+/// @param toCalendar 将要转化为的日历
+- (NSDate *)currentCalendar:(NSCalendar *)currentCalendar toCalendar:(NSCalendar *)toCalendar;
+
 #pragma mark - 判断时间是否为今年
 /**
  判断时间是否为今年
@@ -130,7 +139,25 @@ typedef enum : NSUInteger {
                   minute:(NSInteger)minute
                   second:(NSInteger)second;
 
-#pragma mark - 设置时间格式 
+/// 按照给定时间输出NSDate对象
+/// @param calendar 日历（公历、中国农历、佛历等，默认使用公历）
+/// @param year 年
+/// @param month 月
+/// @param day 日
+/// @param hour 时
+/// @param minute 分
+/// @param second 秒
+/// @param timeZone 时区（默认使用systemTimeZone）
++ (NSDate *)zz_dateWithCalendar:(NSCalendar *)calendar
+                           year:(NSUInteger)year
+                          month:(NSInteger)month
+                            day:(NSInteger)day
+                           hour:(NSInteger)hour
+                         minute:(NSInteger)minute
+                         second:(NSInteger)second
+                       timeZone:(NSTimeZone *)timeZone;
+
+// MARK: - 设置时间格式
 /**
  设置时间格式
 
@@ -148,7 +175,7 @@ typedef enum : NSUInteger {
 
 
 
-#pragma mark - 判断与某天是否为同一天/周/月/年 
+// MARK: - 判断与某天是否为同一天/周/月/年
 /**
  判断与某天是否同一  天
 
