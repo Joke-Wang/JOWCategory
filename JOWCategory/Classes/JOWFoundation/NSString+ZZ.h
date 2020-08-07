@@ -29,12 +29,6 @@ typedef void(^ChangeBlock)(NSString *num);
 
 @end
 
-@interface NSString (Encryption)
-- (NSString *)zz_MD5;
-- (NSString*)zz_SHA1;
-
-@end
-
 @interface NSString (DecimalNumber)
 
 - (NSDecimalNumber *)zz_decimalNumber;

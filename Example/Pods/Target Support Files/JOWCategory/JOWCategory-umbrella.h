@@ -16,6 +16,7 @@
 #import "NSDate+ZZ.h"
 #import "NSDecimalNumber+ZZ.h"
 #import "NSDictionary+ZZ.h"
+#import "NSString+JOWEncryption.h"
 #import "NSString+ZZ.h"
 #import "ZZFoundationHeader.h"
 #import "UIImage+QRCode.h"

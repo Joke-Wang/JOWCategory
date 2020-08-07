@@ -22,7 +22,12 @@
   "public_header_files": "JOWCategory/Classes/JOWCategory.h",
   "frameworks": [
     "UIKit",
-    "Foundation"
+    "Foundation",
+    "AssetsLibrary",
+    "AVFoundation",
+    "Contacts",
+    "Photos",
+    "AddressBook"
   ],
   "subspecs": [
     {
@@ -48,7 +53,16 @@
     {
       "name": "JOWCheckPermission",
       "source_files": "JOWCategory/Classes/JOWCheckPermission/*.{h,m}",
-      "public_header_files": "JOWCategory/Classes/JOWCheckPermission/*.h"
+      "public_header_files": "JOWCategory/Classes/JOWCheckPermission/*.h",
+      "frameworks": [
+        "UIKit",
+        "Foundation",
+        "AssetsLibrary",
+        "AVFoundation",
+        "Contacts",
+        "Photos",
+        "AddressBook"
+      ]
     }
   ]
 }
