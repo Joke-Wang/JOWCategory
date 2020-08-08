@@ -50,4 +50,16 @@ Pod::Spec.new do |s|
       ss.frameworks = 'UIKit', 'Foundation', 'AssetsLibrary', 'AVFoundation', 'Contacts', 'Photos', 'AddressBook'
   end
   
+  s.subspec 'JOWEncrypt' do |ss|
+      ss.source_files = 'JOWCategory/Classes/JOWFoundation/NSString+JOWEncryption.{h,m}', 'JOWCategory/Classes/JOWFoundation/JOWRSA.{h,m}'
+      ss.public_header_files = 'JOWCategory/Classes/JOWFoundation/NSString+JOWEncryption.h', 'JOWCategory/Classes/JOWFoundation/JOWRSA.h'
+      ss.frameworks = 'UIKit', 'Foundation', 'Security'
+  end
+  
+  s.subspec 'JOWRSA' do |ss|
+      ss.source_files = 'JOWCategory/Classes/JOWFoundation/JOWRSA.{h,m}'
+      ss.public_header_files = 'JOWCategory/Classes/JOWFoundation/JOWRSA.h'
+      ss.frameworks = 'UIKit', 'Foundation', 'Security'
+  end
+  
 end

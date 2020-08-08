@@ -40,8 +40,8 @@
 
 
 
-- (NSString *)jowEncryption_encodeSha256:(NSString*)imput {
-    const char *s = [imput cStringUsingEncoding:NSUTF8StringEncoding];
+- (NSString *)jowEncryption_encodeSha256 {
+    const char *s = [self cStringUsingEncoding:NSUTF8StringEncoding];
     NSData *keyData = [NSData dataWithBytes:s length:strlen(s)];
     uint8_t digest[CC_SHA256_DIGEST_LENGTH] = {0};
     CC_SHA256(keyData.bytes, (CC_LONG)keyData.length, digest);

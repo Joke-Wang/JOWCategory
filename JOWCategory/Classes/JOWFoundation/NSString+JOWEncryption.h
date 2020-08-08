@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSString*)jowEncryption_encodeSHA1;
 - (NSString *)jowEncryption_encodeMD5;
 
-- (NSString *)jowEncryption_encodeSha256:(NSString*)imput;
+- (NSString *)jowEncryption_encodeSha256;
 
 
 - (NSString *)jowEncryption_encodeHmacSHA256WithKey:(NSString *)key;
