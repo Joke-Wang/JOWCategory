@@ -12,6 +12,8 @@
 
 #import "JOWCategory.h"
 #import "ZZCheckPermission.h"
+#import "JOWRSA.h"
+#import "JOWRSAone.h"
 #import "NSArray+ZZ.h"
 #import "NSDate+ZZ.h"
 #import "NSDecimalNumber+ZZ.h"
