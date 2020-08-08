@@ -10,7 +10,6 @@
 		0A8914F9B88E11883D187E9FFFD8CDED /* UIView+Gradient.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A3DDE6174052D95B1E74BDA75D9EDB9 /* UIView+Gradient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1602D293F5830004CE90E3B48486ECF6 /* UIView+Frame.h in Headers */ = {isa = PBXBuildFile; fileRef = 53057517C8BB2B6B6396E9CDD541492F /* UIView+Frame.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1CE65BA0B6621E8B32326A165918952D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53839BEF6FB989C9D10B78C6EC9E702C /* Foundation.framework */; };
-		25FFCCA4AAC2498FC6559D8DFCAFF44F /* JOWRSAone.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCF78DF0D25FDAA518C820DE559C524 /* JOWRSAone.m */; };
 		2A833D0512A5BFE5EF62DFA887EFF190 /* NSString+ZZ.h in Headers */ = {isa = PBXBuildFile; fileRef = A5DEFD081B091B6DEBB8BD68EBB0AC73 /* NSString+ZZ.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		308DC0CAF52584882C7C2D52B686CADE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53839BEF6FB989C9D10B78C6EC9E702C /* Foundation.framework */; };
 		3536962725A0923A1C7FF9B5E652E12A /* UIButton+Countdown.m in Sources */ = {isa = PBXBuildFile; fileRef = C943050CE0B548936B1AE34B17758D92 /* UIButton+Countdown.m */; };
@@ -23,7 +22,6 @@
 		5BF982B561F9C31578ABA125ADEF53AB /* ZZFoundationHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = BE38587D8F2ED2B523D735E27AD4E87B /* ZZFoundationHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6119E49603093FDBCF7D3AE9D5C2B331 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AA4AC1B610275F03251E8D598ED87D8 /* AVFoundation.framework */; };
 		62042D879ADC28A19925A9D0A35B4944 /* Pods-JOWCategory_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6471892AD164AFBB4351D427294918D6 /* Pods-JOWCategory_Example-dummy.m */; };
-		66A815147148B2BBE4BE090412CF1E20 /* JOWRSAone.h in Headers */ = {isa = PBXBuildFile; fileRef = D433CBBB098229E53060FA142E476674 /* JOWRSAone.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6C2D922A590293EC8FC96C342AA8C803 /* UIColor+Gradient.h in Headers */ = {isa = PBXBuildFile; fileRef = 72122BDF0298100332CB155C78E9D754 /* UIColor+Gradient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6E7C3564F6088298DD69EEFA6F9737F2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 718CD51899B45DE14E8BEA7B4952F007 /* UIKit.framework */; };
 		7621FA041AE1FCFCD78D738DCF77A738 /* NSArray+ZZ.h in Headers */ = {isa = PBXBuildFile; fileRef = FB146CE4EE41A795F1A0A31A4C4C8800 /* NSArray+ZZ.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -70,10 +68,9 @@
 /* Begin PBXFileReference section */
 		0F618001176F255B9D08005652A692D2 /* Pods-JOWCategory_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JOWCategory_Example-Info.plist"; sourceTree = "<group>"; };
 		150778A1D1232B69F2A40F8ADC26B175 /* JOWCategory-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JOWCategory-dummy.m"; sourceTree = "<group>"; };
-		15EBC321F3CACB413E4BD5D3FF708747 /* JOWCategory.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = JOWCategory.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		15EBC321F3CACB413E4BD5D3FF708747 /* JOWCategory.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = JOWCategory.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		16AF67B156ADDC48403549A2D8E2C3C0 /* UIButtonTextImage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = UIButtonTextImage.m; path = JOWCategory/Classes/JOWUIKit/UIButtonTextImage.m; sourceTree = "<group>"; };
 		17AC68913A54C8C4B8B41EBDF78953ED /* UIImage+ScreenShots.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ScreenShots.m"; path = "JOWCategory/Classes/JOWUIKit/UIImage+ScreenShots.m"; sourceTree = "<group>"; };
-		1DCF78DF0D25FDAA518C820DE559C524 /* JOWRSAone.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JOWRSAone.m; path = JOWCategory/Classes/JOWFoundation/JOWRSAone.m; sourceTree = "<group>"; };
 		2ECCBC01650BEEE4CEA4DF3BC62A37EC /* NSDictionary+ZZ.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+ZZ.m"; path = "JOWCategory/Classes/JOWFoundation/NSDictionary+ZZ.m"; sourceTree = "<group>"; };
 		3468B2021E5FD082222192A06E5FB784 /* UIView+Gradient.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+Gradient.m"; path = "JOWCategory/Classes/JOWUIKit/UIView+Gradient.m"; sourceTree = "<group>"; };
 		387C4229CCD3D116E0AA7B86A453BDF0 /* JOWCategory-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JOWCategory-umbrella.h"; sourceTree = "<group>"; };
@@ -92,20 +89,20 @@
 		72106B05C09D7FF8A8332C84F22BB091 /* NSArray+ZZ.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+ZZ.m"; path = "JOWCategory/Classes/JOWFoundation/NSArray+ZZ.m"; sourceTree = "<group>"; };
 		72122BDF0298100332CB155C78E9D754 /* UIColor+Gradient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+Gradient.h"; path = "JOWCategory/Classes/JOWUIKit/UIColor+Gradient.h"; sourceTree = "<group>"; };
 		76389E56610E995C63B69AC3723443A0 /* JOWRSA.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JOWRSA.m; path = JOWCategory/Classes/JOWFoundation/JOWRSA.m; sourceTree = "<group>"; };
-		76F5A2D3AF2839AFDC55FD86029E4182 /* Pods_JOWCategory_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_JOWCategory_Example.framework; path = "Pods-JOWCategory_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		76F5A2D3AF2839AFDC55FD86029E4182 /* Pods_JOWCategory_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JOWCategory_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7824BD42FC238C46E659F9FF828C9461 /* UIImage+QRCode.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+QRCode.m"; path = "JOWCategory/Classes/JOWQRCode/UIImage+QRCode.m"; sourceTree = "<group>"; };
 		7906AE4C752742FC967CAD0EA3415C22 /* Pods-JOWCategory_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JOWCategory_Example-frameworks.sh"; sourceTree = "<group>"; };
 		799BAE62BB7FD946A2DB24C6F6FF8DED /* JOWCategory.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JOWCategory.release.xcconfig; sourceTree = "<group>"; };
 		7ED07F650B152E08B1F0E65240977601 /* NSString+ZZ.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+ZZ.m"; path = "JOWCategory/Classes/JOWFoundation/NSString+ZZ.m"; sourceTree = "<group>"; };
 		80D580D1136AF39A89BA55AA2904BE83 /* UIColor+Gradient.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+Gradient.m"; path = "JOWCategory/Classes/JOWUIKit/UIColor+Gradient.m"; sourceTree = "<group>"; };
 		8BA52E14E7E4CFD71F1806B2184D32D2 /* JOWCategory.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = JOWCategory.modulemap; sourceTree = "<group>"; };
-		94BD0FE8BBF4C9C5552D513DA65DE8EE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
-		96F3E889B4FE61EFC62DFD05D0FC4E89 /* JOWCategory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = JOWCategory.framework; path = JOWCategory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		94BD0FE8BBF4C9C5552D513DA65DE8EE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		96F3E889B4FE61EFC62DFD05D0FC4E89 /* JOWCategory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JOWCategory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A290C26793DF3D47DD71FB645C46AA4 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/AssetsLibrary.framework; sourceTree = DEVELOPER_DIR; };
 		9A3DDE6174052D95B1E74BDA75D9EDB9 /* UIView+Gradient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+Gradient.h"; path = "JOWCategory/Classes/JOWUIKit/UIView+Gradient.h"; sourceTree = "<group>"; };
 		9AFCB0584352DACFF9E3C5F16B58D7CC /* Pods-JOWCategory_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JOWCategory_Example.release.xcconfig"; sourceTree = "<group>"; };
 		9C69EDD7154A3AD9846E19B1D7535A91 /* UIButton+Countdown.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+Countdown.h"; path = "JOWCategory/Classes/JOWUIKit/UIButton+Countdown.h"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9EF549A6063346DFFB8D6CC5E2108B46 /* JOWCategory.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JOWCategory.debug.xcconfig; sourceTree = "<group>"; };
 		A1CF5B106C52844665D93380F083B0B1 /* Pods-JOWCategory_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JOWCategory_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		A5DEFD081B091B6DEBB8BD68EBB0AC73 /* NSString+ZZ.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+ZZ.h"; path = "JOWCategory/Classes/JOWFoundation/NSString+ZZ.h"; sourceTree = "<group>"; };
@@ -120,14 +117,13 @@
 		CC9784F19FBBBB2997A16E6517A67747 /* Pods-JOWCategory_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JOWCategory_Example-umbrella.h"; sourceTree = "<group>"; };
 		CEBA09C6FC065F3A6FC27A9028EAAA8D /* NSString+JOWEncryption.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+JOWEncryption.h"; path = "JOWCategory/Classes/JOWFoundation/NSString+JOWEncryption.h"; sourceTree = "<group>"; };
 		D1F99F0C1E99AF1DC349A1C87967D963 /* NSDecimalNumber+ZZ.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDecimalNumber+ZZ.m"; path = "JOWCategory/Classes/JOWFoundation/NSDecimalNumber+ZZ.m"; sourceTree = "<group>"; };
-		D433CBBB098229E53060FA142E476674 /* JOWRSAone.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JOWRSAone.h; path = JOWCategory/Classes/JOWFoundation/JOWRSAone.h; sourceTree = "<group>"; };
 		D67EE2C24746D9A66BDFB31130C2FAF3 /* ZZCheckPermission.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ZZCheckPermission.m; path = JOWCategory/Classes/JOWCheckPermission/ZZCheckPermission.m; sourceTree = "<group>"; };
 		D8CD1DCEC74380C02110FFA995B050CB /* UIImage+QRCode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+QRCode.h"; path = "JOWCategory/Classes/JOWQRCode/UIImage+QRCode.h"; sourceTree = "<group>"; };
 		DA705A68D78F36FBAAFEE00192A887DF /* JOWRSA.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JOWRSA.h; path = JOWCategory/Classes/JOWFoundation/JOWRSA.h; sourceTree = "<group>"; };
 		E63A62BC089A67D454185D9E58ECFD1B /* JOWCategory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JOWCategory.h; path = JOWCategory/Classes/JOWCategory.h; sourceTree = "<group>"; };
 		E676A1CC8CB61375DF91895FE99FD22A /* JOWCategory-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JOWCategory-prefix.pch"; sourceTree = "<group>"; };
 		E6A5BCF0B8771129291EECA4345A69BC /* UIButtonTextImage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = UIButtonTextImage.h; path = JOWCategory/Classes/JOWUIKit/UIButtonTextImage.h; sourceTree = "<group>"; };
-		E8696610BF6913BAD96BA5EF0AA0CF22 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		E8696610BF6913BAD96BA5EF0AA0CF22 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		EA56A24A5610E738F56DDBB31A3E1172 /* NSDate+ZZ.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDate+ZZ.m"; path = "JOWCategory/Classes/JOWFoundation/NSDate+ZZ.m"; sourceTree = "<group>"; };
 		EBA9BD55690CD99D82CCF48991DAAA8F /* JOWCategory-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "JOWCategory-Info.plist"; sourceTree = "<group>"; };
 		EBF5BA26616B9800C65CB951312D796B /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Photos.framework; sourceTree = DEVELOPER_DIR; };
@@ -301,8 +297,6 @@
 			children = (
 				DA705A68D78F36FBAAFEE00192A887DF /* JOWRSA.h */,
 				76389E56610E995C63B69AC3723443A0 /* JOWRSA.m */,
-				D433CBBB098229E53060FA142E476674 /* JOWRSAone.h */,
-				1DCF78DF0D25FDAA518C820DE559C524 /* JOWRSAone.m */,
 				FB146CE4EE41A795F1A0A31A4C4C8800 /* NSArray+ZZ.h */,
 				72106B05C09D7FF8A8332C84F22BB091 /* NSArray+ZZ.m */,
 				CA094CF63B485D4B253C5E430E375E2F /* NSDate+ZZ.h */,
@@ -349,7 +343,6 @@
 				4FF304281DA427279EAEBCA328FBA98B /* JOWCategory-umbrella.h in Headers */,
 				371FE16B8E047B4D55FDDE1EC7F532CA /* JOWCategory.h in Headers */,
 				7BB4C34CA67EADE75F224B5E4E6A7E95 /* JOWRSA.h in Headers */,
-				66A815147148B2BBE4BE090412CF1E20 /* JOWRSAone.h in Headers */,
 				7621FA041AE1FCFCD78D738DCF77A738 /* NSArray+ZZ.h in Headers */,
 				BB5E1FF98B0C295DD4F7C69147399A52 /* NSDate+ZZ.h in Headers */,
 				C1D41DE5D579526EA23878F7B2C77C84 /* NSDecimalNumber+ZZ.h in Headers */,
@@ -477,7 +470,6 @@
 			files = (
 				5469FF7D31BABFEFF6848E0162E06546 /* JOWCategory-dummy.m in Sources */,
 				BF4B1F1D18D938837FB5523F73A2BBAE /* JOWRSA.m in Sources */,
-				25FFCCA4AAC2498FC6559D8DFCAFF44F /* JOWRSAone.m in Sources */,
 				7DAD23B99CDA86CFC6FEE1C5CAF1528C /* NSArray+ZZ.m in Sources */,
 				A10858A2D3114E165E307B0EBC994B83 /* NSDate+ZZ.m in Sources */,
 				EA8A07B66245596885576A7186A6DE71 /* NSDecimalNumber+ZZ.m in Sources */,
@@ -592,8 +584,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
