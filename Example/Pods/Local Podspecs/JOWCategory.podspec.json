@@ -63,6 +63,32 @@
         "Photos",
         "AddressBook"
       ]
+    },
+    {
+      "name": "JOWEncrypt",
+      "source_files": [
+        "JOWCategory/Classes/JOWFoundation/NSString+JOWEncryption.{h,m}",
+        "JOWCategory/Classes/JOWFoundation/JOWRSA.{h,m}"
+      ],
+      "public_header_files": [
+        "JOWCategory/Classes/JOWFoundation/NSString+JOWEncryption.h",
+        "JOWCategory/Classes/JOWFoundation/JOWRSA.h"
+      ],
+      "frameworks": [
+        "UIKit",
+        "Foundation",
+        "Security"
+      ]
+    },
+    {
+      "name": "JOWRSA",
+      "source_files": "JOWCategory/Classes/JOWFoundation/JOWRSA.{h,m}",
+      "public_header_files": "JOWCategory/Classes/JOWFoundation/JOWRSA.h",
+      "frameworks": [
+        "UIKit",
+        "Foundation",
+        "Security"
+      ]
     }
   ]
 }

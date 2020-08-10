@@ -1,12 +1,16 @@
 PODS:
   - JOWCategory (0.1.7):
     - JOWCategory/JOWCheckPermission (= 0.1.7)
+    - JOWCategory/JOWEncrypt (= 0.1.7)
     - JOWCategory/JOWFoundation (= 0.1.7)
     - JOWCategory/JOWQRCode (= 0.1.7)
+    - JOWCategory/JOWRSA (= 0.1.7)
     - JOWCategory/JOWUIKit (= 0.1.7)
   - JOWCategory/JOWCheckPermission (0.1.7)
+  - JOWCategory/JOWEncrypt (0.1.7)
   - JOWCategory/JOWFoundation (0.1.7)
   - JOWCategory/JOWQRCode (0.1.7)
+  - JOWCategory/JOWRSA (0.1.7)
   - JOWCategory/JOWUIKit (0.1.7):
     - JOWCategory/JOWFoundation
 
@@ -18,7 +22,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  JOWCategory: 31650d72b861b43209991dfb1cfe34cb1990d2d4
+  JOWCategory: 91378e39f0355d016718240470ad0cd68e673460
 
 PODFILE CHECKSUM: 83a90a57e730c10fb5835a745930a16f183c8f9d
 
