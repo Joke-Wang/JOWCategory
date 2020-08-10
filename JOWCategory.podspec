@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name             = 'JOWCategory'
-  s.version          = '0.1.7'
+  s.version          = '0.1.8'
   s.summary          = 'Summary of functions used in development.'
   s.description      = <<-DESC
   JOWCategory is my Summary of functions used in development.
