@@ -1,6 +1,6 @@
 {
   "name": "JOWCategory",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "summary": "Summary of functions used in development.",
   "description": "JOWCategory is my Summary of functions used in development.",
   "homepage": "https://github.com/Joke-Wang/JOWCategory",
@@ -13,13 +13,13 @@
   },
   "source": {
     "git": "https://github.com/Joke-Wang/JOWCategory.git",
-    "tag": "0.1.7"
+    "tag": "0.1.8"
   },
   "platforms": {
     "ios": "8.0"
   },
   "source_files": "JOWCategory/Classes/JOWCategory.h",
-  "public_header_files": "JOWCategory/Classes/JOWCategory.h",
+  "public_header_files": "JOWCategory/Classes/**、*.h",
   "frameworks": [
     "UIKit",
     "Foundation",
@@ -30,6 +30,11 @@
     "AddressBook"
   ],
   "subspecs": [
+    {
+      "name": "JOWMacro",
+      "source_files": "JOWCategory/Classes/JOWMacro/*.{h,m}",
+      "public_header_files": "JOWCategory/Classes/JOWMacro/*.h"
+    },
     {
       "name": "JOWFoundation",
       "source_files": "JOWCategory/Classes/JOWFoundation/*.{h,m}",
@@ -65,22 +70,6 @@
       ]
     },
     {
-      "name": "JOWEncrypt",
-      "source_files": [
-        "JOWCategory/Classes/JOWFoundation/NSString+JOWEncryption.{h,m}",
-        "JOWCategory/Classes/JOWFoundation/JOWRSA.{h,m}"
-      ],
-      "public_header_files": [
-        "JOWCategory/Classes/JOWFoundation/NSString+JOWEncryption.h",
-        "JOWCategory/Classes/JOWFoundation/JOWRSA.h"
-      ],
-      "frameworks": [
-        "UIKit",
-        "Foundation",
-        "Security"
-      ]
-    },
-    {
       "name": "JOWRSA",
       "source_files": "JOWCategory/Classes/JOWFoundation/JOWRSA.{h,m}",
       "public_header_files": "JOWCategory/Classes/JOWFoundation/JOWRSA.h",
@@ -89,6 +78,21 @@
         "Foundation",
         "Security"
       ]
+    },
+    {
+      "name": "JOWEncrypt",
+      "source_files": "JOWCategory/Classes/JOWFoundation/NSString+JOWEncryption.{h,m}",
+      "public_header_files": "JOWCategory/Classes/JOWFoundation/NSString+JOWEncryption.h",
+      "frameworks": [
+        "UIKit",
+        "Foundation",
+        "Security"
+      ],
+      "dependencies": {
+        "JOWCategory/JOWRSA": [
+
+        ]
+      }
     }
   ]
 }

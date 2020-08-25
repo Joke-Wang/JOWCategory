@@ -26,6 +26,7 @@
 #import <JOWCategory/UIView+Frame.h>
 #import <JOWCategory/UIView+Gradient.h>
 #import <JOWCategory/JOWRSA.h>
+#import <JOWCategory/JOWMacroHeader.h>
 #import <JOWCategory/ZZCheckPermission.h> //权限检查
 #else
 #import "NSArray+ZZ.h"
@@ -44,6 +45,7 @@
 #import "UIView+Frame.h"
 #import "UIView+Gradient.h"
 #import "JOWRSA.h"
+#import "JOWMacroHeader.h"
 #import "ZZCheckPermission.h" //权限检查
 #endif
 
