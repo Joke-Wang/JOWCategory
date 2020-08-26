@@ -39,3 +39,9 @@
                        progress:(float)progress;
 
 @end
+
+@interface UIColor (Random)
+
++ (UIColor *)jow_randomColor;
+
+@end
